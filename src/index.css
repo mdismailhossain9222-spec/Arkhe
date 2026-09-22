@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Instrument Serif", Georgia, serif;
+  --font-sans: "Archivo", ui-sans-serif, system-ui, sans-serif;
+
+  --color-paper: #efebe3;
+  --color-chalk: #f8f6f1;
+  --color-ink: #131210;
+  --color-slate: #2a2824;
+  --color-graphite: #706b62;
+  --color-clay: #a9552f;
+  --color-moss: #6e7561;
+
+  --animate-drift: drift 34s linear infinite;
+  @keyframes drift {
+    to {
+      transform: translateX(-50%);
+    }
+  }
+}
+
+html {
+  background: #efebe3;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+}
+
+::selection {
+  background: var(--color-ink);
+  color: var(--color-paper);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-paper);
+}
+::-webkit-scrollbar-thumb {
+  background: #d3ccc0;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-clay);
+}
+
+:root {
+  color-scheme: light;
+}
+
+@media (pointer: fine) {
+  body,
+  a,
+  button,
+  select,
+  input,
+  textarea,
+  [data-hover] {
+    cursor: none;
+  }
+}
+
+/* drafting grid used behind hero / section blocks */
+.blueprint {
+  background-image:
+    linear-gradient(to right, rgba(19, 18, 16, 0.055) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(19, 18, 16, 0.055) 1px, transparent 1px);
+  background-size: 76px 76px;
+}
+
+.rule-text {
+  -webkit-text-stroke: 1px rgba(19, 18, 16, 0.28);
+  color: transparent;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+}
